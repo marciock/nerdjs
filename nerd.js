@@ -1,11 +1,20 @@
 "use strict";
 
+class Matrix extends HTMLElement{
+
+	appendText(text,element){
+		element.textContent=text;
+	}
+
+}
+
+
 class MdlInit extends HTMLElement{
 	constructor(){
 		super();
 	//	var shadow=this.attachShadow({mode:'open'});
 
-		var tagStyle=`
+		const tagStyle=`
 			<style>
 				@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 				@import url("mdl/material.min.css");
@@ -14,7 +23,7 @@ class MdlInit extends HTMLElement{
 			</style>
 		`;
 
-		var tagScript=`
+		const tagScript=`
 			<script refer src="mdl/material.min.js"></script>
 
 		`;
@@ -34,15 +43,15 @@ class FabRiple extends HTMLElement{
 
 
 		var btn=document.createElement('button');
-		var icon=document.createElement('i');
+		var myIcon=document.createElement('i');
 		var nameIcon=this.getAttribute('icon');
 
 		btn.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--fab', 'mdl-button--colored');
 
-		icon.classList.add('material-icons');
-		icon.innerHTML=nameIcon;
+		myIcon.classList.add('material-icons');
+		myIcon.innerHTML=nameIcon;
 
-		btn.appendChild(icon);
+		btn.appendChild(myIcon);
 
 
 		this.appendChild(btn);
@@ -194,31 +203,26 @@ class CardWide extends HTMLElement{
 		// settings attributes
 			var myId=this.getAttribute('id');
 			var myWidth=this.getAttribute('width');
-			var myheight=this.getAttribute('height');
+			var myHeight=this.getAttribute('height');
 			var colorTitle=this.getAttribute('color-title');
 			var colorText=this.getAttribute('color-text');
-			var img=this.getAttribute('img');
+			var myImg=this.getAttribute('img');
 			var text=this.getAttribute('text');
 			var title=this.getAttribute('title');
 			var textLink=this.getAttribute('text-link');
 			var attrIcon=this.getAttribute('icon');
 
-			//var myProps=new Object();
-
-
-
-
 
 			// somes attributes sets into style
-	/*		var myStyle=`<style>
+		var myStyle=`<style>
 			.demo-card-wide.mdl-card {
 				width: ${myWidth};}
 				.demo-card-wide > .mdl-card__title {color: ${colorTitle};
-				height: ${myheight};
-				background: url('${img}') center / cover;}
+				height: ${myHeight};
+				background: url('localhost/nerdjs/assets/img/telefone.jpg') center / cover;}
 				.demo-card-wide > .mdl-card__menu {	color: ${colorText};}
 				</style>`;
-				*/
+
 
 			//settings elements
 			var divWide=document.createElement('div');
@@ -229,7 +233,7 @@ class CardWide extends HTMLElement{
 			var linkBtn=document.createElement('a');
 			var divCardMenu=document.createElement('div');
 			var btnMenu=document.createElement('BUTTON');
-			var icon=document.createElement('i');
+			var myIcon=document.createElement('i');
 
 
 			// styling css elements created
@@ -242,23 +246,23 @@ class CardWide extends HTMLElement{
 			linkBtn.classList.add('mdl-button' ,'mdl-button--colored', 'mdl-js-button', 'mdl-js-ripple-effect');
 			divCardMenu.classList.add('mdl-card__menu');
 			btnMenu.classList.add('mdl-button', 'mdl-button--icon', 'mdl-js-button', 'mdl-js-ripple-effect');
-			icon.classList.add('material-icons');
+			myIcon.classList.add('material-icons');
 
 			//some attributes so into style elements
 
-		/*	divWide.id=myId;
+			divWide.id=myId;
 			cardTitleText.innerHTML=title;
 			divSupportingText.innerHTML=text;
 			linkBtn.innerHTML=textLink;
-			icon.innerHTML=attrIcon;
-*/
+			myIcon.innerHTML=attrIcon;
+
 			//appending elements
 			divCardTitle.appendChild(cardTitleText);
 			divWide.appendChild(divCardTitle);
 			divWide.appendChild(divSupportingText);
 			divCardActions.appendChild(linkBtn);
 			divWide.appendChild(divCardActions);
-			btnMenu.appendChild(icon);
+			btnMenu.appendChild(myIcon);
 			divCardMenu.appendChild(btnMenu);
 
 			//appending divWide into root component
@@ -275,7 +279,7 @@ class CardWide extends HTMLElement{
 
 	}
 	get props(){
-		
+
 	}
 }
 customElements.define('card-wide',CardWide);
