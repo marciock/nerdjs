@@ -12,7 +12,7 @@ class Matrix extends HTMLElement{
 class MdlInit extends HTMLElement{
 	constructor(){
 		super();
-	//	var shadow=this.attachShadow({mode:'open'});
+	//	const shadow=this.attachShadow({mode:'open'});
 
 		const tagStyle=`
 			<style>
@@ -39,12 +39,12 @@ class FabRiple extends HTMLElement{
 	constructor(){
 		super();
 
-	//	var shadow=this.attachShadow({mode:'open'});
+	//	const shadow=this.attachShadow({mode:'open'});
 
 
-		var btn=document.createElement('button');
-		var myIcon=document.createElement('i');
-		var nameIcon=this.getAttribute('icon');
+		const btn=document.createElement('button');
+		const myIcon=document.createElement('i');
+		const nameIcon=this.getAttribute('icon');
 
 		btn.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--fab', 'mdl-button--colored');
 
@@ -63,11 +63,11 @@ customElements.define('fab-riple',FabRiple);
 class FabButton extends HTMLElement{
 	constructor(){
 		super();
-		//var shadow=this.attachShadow({mode:'open'});
+		//const shadow=this.attachShadow({mode:'open'});
 
-		var btn=document.createElement('button');
-		var icon=document.createElement('i');
-		var nameIcon=this.getAttribute('icon');
+		const btn=document.createElement('button');
+		const icon=document.createElement('i');
+		const nameIcon=this.getAttribute('icon');
 
 		btn.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--fab', 'mdl-js-ripple-effect','mdl-button--colored');
 
@@ -88,16 +88,16 @@ class RaisedButton extends HTMLElement{
 		super();
 
 
-	//		var shadow=this.attachShadow({mode:'open'});
-		var btn=document.createElement('BUTTON');
-		var colored=this.getAttribute('colored');
+	//		const shadow=this.attachShadow({mode:'open'});
+		const btn=document.createElement('BUTTON');
+		const colored=this.getAttribute('colored');
 		if (colored) {
 			btn.classList.add('mdl-button--colored');
 		}
 		btn.classList.add('mdl-button','mdl-js-button','mdl-button--raised');
 
-		var text=this.textContent;
-		var icon=this.innerHTML;
+		const text=this.textContent;
+		const icon=this.innerHTML;
 		btn.textContent=text;
 
 		this.textContent=null;
@@ -114,16 +114,16 @@ class IconButton extends HTMLElement{
 		super();
 
 
-	//		var shadow=this.attachShadow({mode:'open'});
-		var btn=document.createElement('BUTTON');
-		var colored=this.getAttribute('colored');
+	//		const shadow=this.attachShadow({mode:'open'});
+		const btn=document.createElement('BUTTON');
+		const colored=this.getAttribute('colored');
 		if (colored) {
 			btn.classList.add('mdl-button--colored');
 		}
 		btn.classList.add('mdl-button','mdl-js-button','mdl-button--icon');
 
-		//var text=this.textContent;
-		var icon=this.innerHTML;
+		//const text=this.textContent;
+		const icon=this.innerHTML;
 		console.log(icon);
 		btn.innerHTML=icon;
 
@@ -141,15 +141,15 @@ class FlatButton extends HTMLElement{
 		super();
 
 
-	//		var shadow=this.attachShadow({mode:'open'});
-		var btn=document.createElement('BUTTON');
-		var colored=this.getAttribute('colored');
+	//		const shadow=this.attachShadow({mode:'open'});
+		const btn=document.createElement('BUTTON');
+		const colored=this.getAttribute('colored');
 		if (colored) {
 			btn.classList.add('mdl-button--colored');
 		}
 		btn.classList.add('mdl-button','mdl-js-button','mdl-js-ripple-effect');
 
-		var text=this.textContent;
+		const text=this.textContent;
 
 		this.textContent=text;
 		this.textContent=null;
@@ -165,11 +165,11 @@ class IconBadge extends HTMLElement{
 	constructor(){
 		super();
 
-		var div=document.createElement('div');
+		const div=document.createElement('div');
 		div.classList.add('material-icons','mdl-badge','mdl-badge--overlap');
-		var data=this.getAttribute('data-badge');
+		const data=this.getAttribute('data-badge');
 		div.setAttribute('data-badge',data);
-		var text=this.innerHTML;
+		const text=this.innerHTML;
 			console.log(text);
 		this.innerHTML=text;
 		this.textContent=null;
@@ -183,11 +183,11 @@ class TextBadge extends HTMLElement{
 	constructor(){
 		super();
 
-		var div=document.createElement('span');
+		const div=document.createElement('span');
 		div.classList.add('mdl-badge');
-		var data=this.getAttribute('data-badge');
+		const data=this.getAttribute('data-badge');
 		div.setAttribute('data-badge',data);
-		var text=this.innerHTML;
+		const text=this.innerHTML;
 			console.log(text);
 		this.innerHTML=text;
 		this.textContent=null;
@@ -201,20 +201,20 @@ class CardWide extends HTMLElement{
 		super();
 
 		// settings attributes
-			var myId=this.getAttribute('id');
-			var myWidth=this.getAttribute('width');
-			var myHeight=this.getAttribute('height');
-			var colorTitle=this.getAttribute('color-title');
-			var colorText=this.getAttribute('color-text');
-			var myImg=this.getAttribute('img');
-			var text=this.getAttribute('text');
-			var title=this.getAttribute('title');
-			var textLink=this.getAttribute('text-link');
-			var attrIcon=this.getAttribute('icon');
+			const myId=this.getAttribute('id');
+			const myWidth=this.getAttribute('width');
+			const myHeight=this.getAttribute('height');
+			const colorTitle=this.getAttribute('color-title');
+			const colorText=this.getAttribute('color-text');
+			const myImg=this.getAttribute('img');
+			const text=this.getAttribute('text');
+			const title=this.getAttribute('title');
+			const textLink=this.getAttribute('text-link');
+			const attrIcon=this.getAttribute('icon');
 
 
 			// somes attributes sets into style
-		var myStyle=`<style>
+		const myStyle=`<style>
 			.demo-card-wide.mdl-card {
 				width: ${myWidth};}
 				.demo-card-wide > .mdl-card__title {color: ${colorTitle};
@@ -225,15 +225,15 @@ class CardWide extends HTMLElement{
 
 
 			//settings elements
-			var divWide=document.createElement('div');
-			var divCardTitle=document.createElement('div');
-			var cardTitleText=document.createElement('h2');
-			var divSupportingText=document.createElement('div');
-			var divCardActions=document.createElement('div');
-			var linkBtn=document.createElement('a');
-			var divCardMenu=document.createElement('div');
-			var btnMenu=document.createElement('BUTTON');
-			var myIcon=document.createElement('i');
+			const divWide=document.createElement('div');
+			const divCardTitle=document.createElement('div');
+			const cardTitleText=document.createElement('h2');
+			const divSupportingText=document.createElement('div');
+			const divCardActions=document.createElement('div');
+			const linkBtn=document.createElement('a');
+			const divCardMenu=document.createElement('div');
+			const btnMenu=document.createElement('BUTTON');
+			const myIcon=document.createElement('i');
 
 
 			// styling css elements created
